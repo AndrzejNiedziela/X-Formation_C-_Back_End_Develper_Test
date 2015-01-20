@@ -1,0 +1,85 @@
+RECRUITMENT TEST (C++/BACK END DEVELOPER)
+Instruction: Please answer the following questions to the best of your ability
+and return your solutions to X-Formation for review.
+Note: (*) indicates an extra task that is not required
+
+1. There are at least 4 different bugs in the implementation of the
+following Array class. For at least 2 of them could you please:
+
+I. Provide a test case for each bug.
+II. Propose a fix for each bug (please provide us with fixed implementation in
+array.h file).
+III. (*) Assuming we have a bug-free implementation of Array class, do you
+think there are any design problems with it?
+
+#include <new>
+#include <cstddef>
+using std::nothrow;
+template <class T>
+class Array
+{
+private:
+T *m_pData;
+unsigned int m_nSize;
+public:
+Array(unsigned int nSize) : m_nSize(nSize)
+{
+if(m_nSize > 0)
+m_pData = new (nothrow) T[m_nSize];
+}
+virtual ~Array()
+{
+if(m_pData != NULL) delete m_pData;
+}
+
+bool Set(unsigned int nPos, const T& Value)
+{
+if(nPos < m_nSize)
+{
+m_pData[nPos]= Value;
+return true;
+}
+else
+return false;
+}
+T Get(unsigned int nPos)
+{
+if(nPos < m_nSize)
+return m_pData[nPos];
+else
+return T();
+}
+};
+
+2.
+
+Consider the following physical data model:
+
+Write an SQL query that:
+I. Selects names of all buildings in Poland.
+II. Selects countries where a total number of inhabitants (population) in
+all the cities is greater than 400.
+III. (*) Selects names of countries that have no buildings at all.
+
+Notice
+Please write code in separate files. We would very much appreciate it if you follow these guidelines
+on file naming conventions when providing you answers:
+•
+•
+•
+
+array.h and array_test.cpp for the answers to #1 task, with the first one involving fixed
+implementation and the second one testing the ability to fix bugs
+queries.sql for the answers to #2 task
+*.txt or *.md for any documentation, comments, explanations or discussion regarding the
+tasks done
+
+For your best convenience, please deliver your answers via private gist (gist.github.com). To do
+this, simply create one, create files with answers and share the link with us. If you prefer more
+traditional methods, you may want to just archive them and send to us as an attachment to email.
+
+www.x-formation.com
+
+Recruitment Test C++/Back End Developer
+
+
