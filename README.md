@@ -4,4 +4,4 @@ This repository contains solutions to [the recruitment test for a C++/Back End D
 Best,
 Andrzej Niedziela
 
-PS. If you have a free moment check you [my awesome profile at LinkedIn](de.linkedin.com/in/AndrzejNiedziela)
+PS. If you have a spare moment check [my awesome profile at LinkedIn](de.linkedin.com/in/AndrzejNiedziela)
